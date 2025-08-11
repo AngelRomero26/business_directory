@@ -88,6 +88,7 @@ a:hover{
 .card-content h3{
     font-size: 28px;
     margin-bottom: 8px;
+    text-align: center;
 }
 
 .card-content p{
