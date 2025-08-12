@@ -131,25 +131,22 @@
 
         public function mdlBuscador($buscar){
             try{
-                if(trim($buscar) === ''){
-                    return $this->mdlMostrarEmpresas();
-                }else{
-
-                    $stmt = $this->pdo->prepare(
-                        "SELECT 
-                            socios.id_socio, socios.nomSocio, socios.numCelular, socios.email,
-                            empresas.nomEmpresa, empresas.sector, empresas.logo
-                        FROM socios 
-                        JOIN empresas ON empresas.socio_id = socios.id_socio
-                        WHERE LOWER(nomEmpresa) LIKE :buscar OR LOWER(nomSocio) LIKE :buscar"
-                    );
-                    $parametro = "%" . strtolower($buscar) . "%";
-                    $stmt->bindParam(':buscar', $parametro, PDO::PARAM_STR);
-                    $stmt->execute();
-                    $resultados =$stmt->fetchAll(PDO::FETCH_OBJ);
-                    $numero = count($resultados);
-                    return $resultados;
-                }
+        
+                $stmt = $this->pdo->prepare(
+                    "SELECT 
+                        socios.id_socio, socios.nomSocio, socios.numCelular, socios.email,
+                        empresas.nomEmpresa, empresas.sector, empresas.logo
+                    FROM socios 
+                    JOIN empresas ON empresas.socio_id = socios.id_socio
+                    WHERE LOWER(nomEmpresa) LIKE :buscar OR LOWER(nomSocio) LIKE :buscar"
+                );
+                $parametro = "%" . strtolower($buscar) . "%";
+                $stmt->bindParam(':buscar', $parametro, PDO::PARAM_STR);
+                $stmt->execute();
+                $resultados= $stmt->fetchAll(PDO::FETCH_OBJ);
+                $numero = count($resultados);
+                return $resultados;
+                
             }catch(Exception $e){
                 $resultados = [];
                 $numero = 0;

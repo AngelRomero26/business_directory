@@ -1,12 +1,12 @@
 <section class="buscador" >
     <fieldset>
         <div class="container-input">
-            <input onkeyup="buscar(this.value).val();" id="buscar" class="buscadorinpt" type="text" name="buscar" placeholder="Buscar empresa, sector o socio">
+            <input onkeyup="buscar(this.value);" id="buscar" class="buscadorinpt" type="text" name="buscar" placeholder="Buscar empresa, sector o socio">
             <button type="submit"><i class="bi bi-search"></i></button>
         </div>
     </fieldset>
     <div id="datos_buscador">
-        <?php foreach($resultados as $re):?>
+        <?php foreach($respuesta as $re):?>
             <div class="container-card">
                 <div class="container">
                     <div class="card">
@@ -30,11 +30,6 @@
                                     <h3>TELEFONO: </h3>
                                     <p> <?=$re->numCelular?> </p>
                                 </div>
-                            </div>
-
-                            <div class="correo centrado">
-                                <h3>CORREO ELECTRONICO: </h3>
-                                <p> <?=$re->email?></p>
                             </div>
                         </div>
                     </div>                

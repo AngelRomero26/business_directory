@@ -10,11 +10,13 @@
         }
 
         public function Inicio(){
-            $resultados = $this->ctrBuscador();
-            $empresas = $this->ctrMostrarEmpresas();
             $totalEmpresas = $this->ctrMostrarTotal();
-
-
+            if($this->ctrBuscador($resultados) === ''){
+                
+                $empresas = $this->ctrMostrarEmpresas();
+            }else{
+                $empresas = $this->ctrBuscador();
+            }
             require_once "vistas/paginas/encabezado.php";
             require_once "vistas/paginas/inicio.php";
             require_once "vistas/paginas/pie.php";
@@ -34,11 +36,29 @@
             return $this->modelo->mdlMostrarEmpresasSinNulos();
         }
 
-        public function  ctrBuscador($buscar = ''){
-            $buscar = isset($_POST['buscar']) ? $_POST['buscar'] : '';
-            return $this->modelo->mdlBuscador($buscar);
+        public function ctrBuscador($buscar = ''){
             
+            $buscar = isset($_POST['buscar']) ? trim($_POST['buscar']) : '' ;
+            // $bucar = trim($buscar);
+            $resultados = $this->modelo->mdlBuscador($buscar);
+            // var_dump($resultados);
+            return $resultados;
+            // var_dump($buscar);
+            // if ($buscar === '') {
+            //     $resultados = $this->modelo->mdlMostrarEmpresas();
+            //     // var_dump($empresas);
+            //     var_dump($buscar);
+            //     // return $empresas;
+            // } else {
+            //     $resultados = $this->modelo->mdlBuscador($buscar);
+                // var_dump($resultados);
+                // foreach ($empresas as $e) {
+                //     echo "<div>{$e->nomEmpresa}</div>";
+                // }
+                
+            // }   
         }
+        
 
          // static public function ctrMostrarBd(){
 
