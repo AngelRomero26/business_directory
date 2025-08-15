@@ -10,19 +10,24 @@
         }
 
         public function Inicio(){
-            $totalEmpresas = $this->ctrMostrarTotal();
-            if($this->ctrBuscador($resultados) === ''){
+            $buscar = trim($_GET['buscar'] ?? '');
+
+            
+            if($buscar ===''){
                 
                 $empresas = $this->ctrMostrarEmpresas();
+                $totalEmpresas = $this->ctrMostrarTotal();
             }else{
-                $empresas = $this->ctrBuscador();
+                $empresas = $this->ctrBuscador($buscar);
+                $totalEmpresas = (object)['Empresas' => $busqueda($numero)];
+
             }
             require_once "vistas/paginas/encabezado.php";
             require_once "vistas/paginas/inicio.php";
             require_once "vistas/paginas/pie.php";
         }
+
         public function ctrMostrarTotal(){
-            
             return $this->modelo->mdlMostrarTotal();
         }
 
@@ -39,24 +44,17 @@
         public function ctrBuscador($buscar = ''){
             
             $buscar = isset($_POST['buscar']) ? trim($_POST['buscar']) : '' ;
-            // $bucar = trim($buscar);
-            $resultados = $this->modelo->mdlBuscador($buscar);
-            // var_dump($resultados);
-            return $resultados;
-            // var_dump($buscar);
-            // if ($buscar === '') {
-            //     $resultados = $this->modelo->mdlMostrarEmpresas();
-            //     // var_dump($empresas);
-            //     var_dump($buscar);
-            //     // return $empresas;
-            // } else {
-            //     $resultados = $this->modelo->mdlBuscador($buscar);
-                // var_dump($resultados);
-                // foreach ($empresas as $e) {
-                //     echo "<div>{$e->nomEmpresa}</div>";
-                // }
-                
-            // }   
+
+            $busqueda = $this->modelo->mdlBuscador($buscar);
+            $empresas = $busqueda['resultados'];
+            $numero = $busqueda['numero'];
+            echo json_encode([
+
+                'empresas' => $empresas,
+                'numero' => $numero
+
+            ]);
+            
         }
         
 

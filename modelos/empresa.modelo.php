@@ -145,11 +145,18 @@
                 $stmt->execute();
                 $resultados= $stmt->fetchAll(PDO::FETCH_OBJ);
                 $numero = count($resultados);
-                return $resultados;
+                return [
+                    'resultados' =>$resultados,
+                    'numero' =>$numero
+                ];
+                    
                 
             }catch(Exception $e){
-                $resultados = [];
-                $numero = 0;
+                return [
+                    'resultados' => [],
+                    'numero' => 0
+                ];
+                
             }
         }
 

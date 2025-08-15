@@ -122,8 +122,25 @@ input::placeholder{
     align-items: center;
 }
 
+.no-resultado{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 36vh;
+    /* height: 58.2vh; */
+}
 
 
+@media(min-width:530px){
+    .no-resultado{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 58.2vh;
+    }
+}
 
 @media(min-width:700px){
     .container-input input{
@@ -157,6 +174,7 @@ input::placeholder{
 
     #content-card{
     }
+
 }
 
 @media(min-width:880px){

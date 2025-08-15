@@ -5,38 +5,7 @@
             <button type="submit"><i class="bi bi-search"></i></button>
         </div>
     </fieldset>
-    <div id="datos_buscador">
-        <?php foreach($respuesta as $re):?>
-            <div class="container-card">
-                <div class="container">
-                    <div class="card">
-                        <input type="hidden" name="ID" <?=$re->id_socio?> >
-                        <div class="container-img">
-                            <img src="/aws/cana/<?=$re->logo?>"  alt="logo">
-                        </div>                    
-                        <div id="content-card">
-                            <h2> <?=$re->nomEmpresa?> </h2>
-                            <div class="sector centrado">
-                                <h3>SECTOR: </h3>
-                                <p> <?=$re->sector?> </p>
-                            </div>
-
-                            <div class="content-p">
-                                <div class="socio centrado">
-                                    <h3>SOCIO: </h3>
-                                    <p> <?=$re->nomSocio?> </p>
-                                </div>
-                                <div class="telefono centrado">
-                                    <h3>TELEFONO: </h3>
-                                    <p> <?=$re->numCelular?> </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>                
-                </div>
-            </div>
-        <?php endforeach;?>
-    </div>
+        
 </section>
     
 <section>
@@ -46,52 +15,55 @@
 </section>
 <main>
     <!-- CONTENEDOR DE TARJETAS -->
-    <?php foreach($empresas as $r) : ?>
-        <div class="container-card">
-            <div class="container">
-                <div class="card">
-                    <input type="hidden" name="ID" <?=$r->id_socio?> >
-                    <div class="container-img">
-                        <img src="/aws/cana/<?=$r->logo?>"  alt="logo">
-                    </div>
-                    <div id="content-card">
-                        <h2> <?=$r->nomEmpresa?> </h2>
-                        <div class="sector centrado">
-                            <h3>SECTOR: </h3>
-                            <p> <?=$r->sector?> </p>
-                        </div>
+    <div id="datos_buscador">
 
-                        <div class="content-p">
-                            <div class="socio centrado">
-                                <h3>SOCIO: </h3>
-                                <p> <?=$r->nomSocio?> </p>
-                            </div>
-                            <div class="telefono centrado">
-                                <h3>TELEFONO: </h3>
-                                <p> <?=$r->numCelular?> </p>
-                            </div>
+        <?php foreach($empresas as $r) : ?>
+            <div class="container-card">
+                <div class="container">
+                    <div class="card">
+                        <input type="hidden" name="ID" <?=$r->id_socio?> >
+                        <div class="container-img">
+                            <img src="/aws/cana/<?=$r->logo?>"  alt="logo">
                         </div>
+                        <div id="content-card">
+                            <h2> <?=$r->nomEmpresa?> </h2>
+                            <div class="sector centrado">
+                                <h3>SECTOR: </h3>
+                                <p> <?=$r->sector?> </p>
+                            </div>
 
-                        <div class="correo centrado">
-                            <h3>CORREO ELECTRONICO: </h3>
-                            <p> <?=$r->email?></p>
-                        </div>
-                        <div class="direcciones">
-                            <div class="box1">
-                                <p>colonia: <?=$r->colonia ?></p>
-                                <p>calle: <?=$r->calle?></p>
-                                <p>C.P: <?=$r-> codigo_postal?></p>
+                            <div class="content-p">
+                                <div class="socio centrado">
+                                    <h3>SOCIO: </h3>
+                                    <p> <?=$r->nomSocio?> </p>
+                                </div>
+                                <div class="telefono centrado">
+                                    <h3>TELEFONO: </h3>
+                                    <p> <?=$r->numCelular?> </p>
+                                </div>
                             </div>
-                            <div class="box2">
-                                <p>No. E: <?=$r->no_exterior?></p>
-                                <p>No. I: <?=$r->no_interior?></p>
-                                <p>mun: <?=$r->municipio?></p>
+
+                            <div class="correo centrado">
+                                <h3>CORREO ELECTRONICO: </h3>
+                                <p> <?=$r->email?></p>
+                            </div>
+                            <div class="direcciones">
+                                <div class="box1">
+                                    <p>colonia: <?=$r->colonia ?></p>
+                                    <p>calle: <?=$r->calle?></p>
+                                    <p>C.P: <?=$r-> codigo_postal?></p>
+                                </div>
+                                <div class="box2">
+                                    <p>No. E: <?=$r->no_exterior?></p>
+                                    <p>No. I: <?=$r->no_interior?></p>
+                                    <p>mun: <?=$r->municipio?></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>                
+                    </div>                
+                </div>
             </div>
-        </div>
-    <?php endforeach;?>
+        <?php endforeach;?>
+    </div>
 </main>
 
