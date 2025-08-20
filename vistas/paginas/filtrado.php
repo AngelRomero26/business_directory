@@ -36,7 +36,7 @@
             </div>
         <?php endforeach;?>
     <?php else: ?>
-        <p> No hay empresas</p>
+        <h2 class="no-resultados"> No hay empresas</h2>
     <?php endif; ?>
 </section>
 

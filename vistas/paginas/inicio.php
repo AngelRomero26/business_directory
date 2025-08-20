@@ -4,10 +4,8 @@
             <input onkeyup="buscar(this.value);" id="buscar" class="buscadorinpt" type="text" name="buscar" placeholder="Buscar empresa, sector o socio">
             <button type="submit"><i class="bi bi-search"></i></button>
         </div>
-    </fieldset>
-        
+    </fieldset> 
 </section>
-    
 <section>
     <div class="centro">
         <h4>Total de empresas: <?= $totalEmpresas->Empresas ?></h4>
@@ -16,7 +14,6 @@
 <main>
     <!-- CONTENEDOR DE TARJETAS -->
     <div id="datos_buscador">
-
         <?php foreach($empresas as $r) : ?>
             <div class="container-card">
                 <div class="container">
@@ -47,7 +44,7 @@
                                 <h3>CORREO ELECTRONICO: </h3>
                                 <p> <?=$r->email?></p>
                             </div>
-                            <div class="direcciones">
+                            <!-- <div class="direcciones">
                                 <div class="box1">
                                     <p>colonia: <?=$r->colonia ?></p>
                                     <p>calle: <?=$r->calle?></p>
@@ -58,7 +55,7 @@
                                     <p>No. I: <?=$r->no_interior?></p>
                                     <p>mun: <?=$r->municipio?></p>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>                
                 </div>

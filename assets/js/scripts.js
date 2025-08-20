@@ -1,11 +1,6 @@
 console.log(buscar);
 
-$(document).ready(function() {
-    $("#buscar").on("keyup", function() {
-        let valor = $(this).val();
-        buscar(valor);
-    });
-});
+
 
 function buscar(buscar){
     if(buscar.trim() === ""){
@@ -57,7 +52,7 @@ function buscar(buscar){
                 });
                 $(".centro h4").text("Total de empresas: " + data.numero);
             }else{
-                html = `<h3 class="no-resultado">No se encontraron resultados.</h3>`;
+                html = `<h3 class="no-resultados">No se encontraron resultados.</h3>`;
                 $(".centro h4").remove();
             }
             console.log(parametros),

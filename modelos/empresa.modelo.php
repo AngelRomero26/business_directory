@@ -88,13 +88,15 @@
                 $stmt = $this->pdo->prepare(
                     "SELECT 
                         socios.id_socio, socios.nomSocio, socios.numCelular, socios.email,
-                        empresas.nomEmpresa, empresas.sector, empresas.logo,
-                        direcciones.colonia, direcciones.calle, direcciones.no_exterior, direcciones.no_interior, direcciones.codigo_postal, direcciones.municipio
+                        empresas.nomEmpresa, empresas.sector, empresas.logo
+                        -- direcciones.colonia, direcciones.calle, direcciones.no_exterior, direcciones.no_interior, direcciones.codigo_postal, direcciones.municipio,
+                        -- pagos.fecha_vencimiento
 
                     FROM socios
                     JOIN empresas ON empresas.socio_id = socios.id_socio
-                    JOIN direcciones ON direcciones.empresa_id = empresas.id_empresa
-                    ORDER BY socios.id_socio
+                    -- JOIN direcciones ON direcciones.empresa_id = empresas.id_empresa
+                    -- JOIN pagos ON pagos.empresa_id = empresas.id_empresa
+                    -- ORDER BY pagos.fecha_vencimiento ASC
                 ;");
                 $stmt->execute();
                 return $stmt->fetchAll(PDO::FETCH_OBJ);
@@ -135,10 +137,11 @@
                 $stmt = $this->pdo->prepare(
                     "SELECT 
                         socios.id_socio, socios.nomSocio, socios.numCelular, socios.email,
-                        empresas.nomEmpresa, empresas.sector, empresas.logo
+                        empresas.nomEmpresa, empresas.sector, empresas.logo, empresas.categoria
+                        
                     FROM socios 
                     JOIN empresas ON empresas.socio_id = socios.id_socio
-                    WHERE LOWER(nomEmpresa) LIKE :buscar OR LOWER(nomSocio) LIKE :buscar"
+                    WHERE LOWER(nomEmpresa) LIKE :buscar OR LOWER(nomSocio) LIKE :buscar OR LOWER(categoria) LIKE :buscar"
                 );
                 $parametro = "%" . strtolower($buscar) . "%";
                 $stmt->bindParam(':buscar', $parametro, PDO::PARAM_STR);
@@ -157,6 +160,26 @@
                     'numero' => 0
                 ];
                 
+            }
+        }
+
+        public function mdlMostrarEmpresasSinLogo() {
+            try {
+                $stmt = $this->pdo->prepare(
+                    "SELECT 
+                        socios.id_socio, socios.nomSocio, socios.numCelular, socios.email,
+                        empresas.nomEmpresa,empresas.sector,empresas.logo
+                        
+                    FROM socios
+                    JOIN empresas ON empresas.socio_id = socios.id_socio
+                    WHERE empresas.logo IS NULL OR empresas.logo = 'assets/img/logo_'
+                    
+                    ORDER BY socios.id_socio"
+                );
+                $stmt->execute();
+                return $stmt->fetchAll(PDO::FETCH_OBJ);
+            } catch(Exception $e) {
+                die($e->getMessage());
             }
         }
 

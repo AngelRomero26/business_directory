@@ -56,6 +56,11 @@
             ]);
             
         }
+
+          public function ctrMostrarEmpresasSinLogo(){
+
+            return $this->modelo->mdlMostrarEmpresasSinLogo();
+        }
         
 
          // static public function ctrMostrarBd(){

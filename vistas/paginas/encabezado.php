@@ -16,7 +16,7 @@
 <body>
     <header>
         <div class="container-nav">
-            <div class="logo"><a href="index.php"><img src="/aws/cana/assets/img/logo.png" alt="" id="logo"></a></div>
+            <div class="logo"><a href="index.php"><img src="/aws/cana/assets/img/logo_canacintra_home.png" alt="" id="logo"></a></div>
             <nav>
                 <ul>
                     <?php 
@@ -27,7 +27,7 @@
                             <li><a href="index.php?c=contacto">Contacto</a></li> 
                           
                         <?php else: ?> 
-                            <a href="index.php"><i class="bi bi-arrow-left"></i></a>
+                            <a href="#" onclick="window.history.back(); return false;"><i class="bi bi-arrow-left"></i></a>
 
                         <?php endif; ?>
                         
