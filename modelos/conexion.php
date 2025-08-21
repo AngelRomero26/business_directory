@@ -1,9 +1,9 @@
 <?php
     class Conexion{
 
-        const server = 'localhost';
-        const BD ='cana_th';
-        const user ='root';
+        const server = '';
+        const BD ='';
+        const user ='';
         const pass ='';
 
         static public function conectar(){

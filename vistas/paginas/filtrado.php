@@ -6,7 +6,7 @@
                     <div class="card">
                         <input type="hidden" name="ID" <?=$e->id_socio?> >
                         <div class="container-img">
-                            <img src="/aws/cana/<?=$e->logo?>"  alt="logo">
+                            <img src="/<?=$e->logo?>" alt="logo">
                         </div>
                         <div id="content-card">
                             <h2> <?=$e->nomEmpresa?> </h2>

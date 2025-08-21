@@ -3,7 +3,7 @@
         <?php foreach($contactos as $c): ?>
             <div class="card-contacto">
                 <div class="container-img-contacto">
-                    <img src="/aws/cana/<?=$c->imgContacto?>" alt="foto">
+                    <img src="/<?=$c->imgContacto?>" alt="foto">
                 </div>
                 <div class="card-content-contacto">
                     <h3><?=$c->puestoContacto?></h3>

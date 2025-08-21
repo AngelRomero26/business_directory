@@ -10,6 +10,6 @@
         </div>
     </footer>
 
-    <script src="./assets/js/scripts.js"></script>
+    <script src="/assets/js/scripts.js"></script>
 </body>
 </html>

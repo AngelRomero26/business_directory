@@ -20,7 +20,7 @@ function buscar(buscar){
                             <div class="container">
                                 <div class="card">
                                     <div class="container-img">
-                                        <img src="/aws/cana/${r.logo}" alt="logo">
+                                        <img src="/${r.logo}" alt="logo">
                                     </div>
                                     <div id="content-card">
                                         <h2>${r.nomEmpresa}</h2>

@@ -20,7 +20,7 @@
                     <div class="card">
                         <input type="hidden" name="ID" <?=$r->id_socio?> >
                         <div class="container-img">
-                            <img src="/aws/cana/<?=$r->logo?>"  alt="logo">
+                            <img src="/<?=$r->logo?>"  alt="logo">
                         </div>
                         <div id="content-card">
                             <h2> <?=$r->nomEmpresa?> </h2>
@@ -42,18 +42,6 @@
                                 <h3>CORREO ELECTRONICO: </h3>
                                 <p> <?=$r->email?></p>
                             </div>
-                            <!-- <div class="direcciones">
-                                <div class="box1">
-                                    <p>colonia: <?=$r->colonia ?></p>
-                                    <p>calle: <?=$r->calle?></p>
-                                    <p>C.P: <?=$r-> codigo_postal?></p>
-                                </div>
-                                <div class="box2">
-                                    <p>No. E: <?=$r->no_exterior?></p>
-                                    <p>No. I: <?=$r->no_interior?></p>
-                                    <p>mun: <?=$r->municipio?></p>
-                                </div>
-                            </div> -->
                         </div>
                     </div>                
                 </div>
