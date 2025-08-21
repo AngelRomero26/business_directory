@@ -1,6 +1,6 @@
 <?php
-
     require_once "modelos/contacto.modelo.php";
+
     class ContactoControlador{
 
         private $modelo;
@@ -10,13 +10,12 @@
         }
 
         public function Inicio(){
+            
             $contactos = $this->ctrMostrarContactos();
        
-            require_once "vistas/paginas/encabezado.php";
+            require_once "vistas/paginas/modulos/encabezado.php";
             require_once "vistas/paginas/contacto.php";
-            require_once "vistas/paginas/pie.php";
-
-
+            require_once "vistas/paginas/modulos/pie.php";
         }
 
         public function ctrMostrarContactos(){

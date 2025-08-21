@@ -1,5 +1,4 @@
 <?php 
-
     require_once "modelos/sectores.modelo.php";
 
     class SectoresControlador{
@@ -9,12 +8,13 @@
         }
 
         public function Inicio(){   
-            require_once "vistas/paginas/encabezado.php";
+            require_once "vistas/paginas/modulos/encabezado.php";
             require_once "vistas/paginas/sectores.php";
-            require_once "vistas/paginas/pie.php";
+            require_once "vistas/paginas/modulos/pie.php";
         }
 
-        public function filtrado(){
+        public function ctrFiltrado(){
+
             $sectorAbrev = $_GET['sector'] ?? null;
             $empresas = [];
 
@@ -35,17 +35,17 @@
                 'siTS' => 'Sector de Industriales Técnicos y de Servicio',
                 'SN' => 'Sin Clasificar'
             ];
+
             if($sectorAbrev === 'SN') {   
-                $empresas = $this->modelo->MostrarEmpresasSinSector();
+                $empresas = $this->modelo->mdlMostrarEmpresasSinSector();
                 
             }elseif($sectorAbrev && isset($sectores[$sectorAbrev])){
                 $sectorReal = $sectores[$sectorAbrev];
-                $empresas = $this->modelo->MostrarSectores($sectorReal);
-
+                $empresas = $this->modelo->mdlMostrarSectores($sectorReal);
             }
-            require_once "vistas/paginas/encabezado.php";
+
+            require_once "vistas/paginas/modulos/encabezado.php";
             require "vistas/paginas/filtrado.php";
-            require_once "vistas/paginas/pie.php";
-            
+            require_once "vistas/paginas/modulos/pie.php";
         }
     }

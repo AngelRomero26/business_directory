@@ -1,4 +1,4 @@
-<section>
+<section id="resultadoSectores">
     <?php if(!empty($empresas)) : ?>
         <?php foreach($empresas as $e):?>
             <div class="container-card">
@@ -14,7 +14,6 @@
                                 <h3>SECTOR: </h3>
                                 <p> <?=$e->sector?> </p>
                             </div>
-
                             <div class="content-p">
                                 <div class="socio centrado">
                                     <h3>SOCIO: </h3>
@@ -25,7 +24,6 @@
                                     <p> <?=$e->numCelular?> </p>
                                 </div>
                             </div>
-
                             <div class="correo centrado">
                                 <h3>CORREO ELECTRONICO: </h3>
                                 <p> <?=$e->email?></p>
@@ -36,7 +34,7 @@
             </div>
         <?php endforeach;?>
     <?php else: ?>
-        <h2 class="no-resultados"> No hay empresas</h2>
+        <h2 class="no-resultados">No hay empresas</h2>
     <?php endif; ?>
 </section>
 

@@ -1,6 +1,3 @@
-console.log(buscar);
-
-
 
 function buscar(buscar){
     if(buscar.trim() === ""){
@@ -8,6 +5,7 @@ function buscar(buscar){
         return;
     }
     let parametros = {"buscar":buscar};
+
     $.ajax({
         url: 'index.php?c=empresa&a=ctrBuscador',
         type: 'POST', 
@@ -55,10 +53,7 @@ function buscar(buscar){
                 html = `<h3 class="no-resultados">No se encontraron resultados.</h3>`;
                 $(".centro h4").remove();
             }
-            console.log(parametros),
             $("#datos_buscador").html(html);
-
-            console.log(data);
         },
         error: function(xhr, status, error){
             console.log("Ajax error: ", status, error);

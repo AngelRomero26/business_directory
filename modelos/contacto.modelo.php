@@ -4,6 +4,7 @@
     class Contacto{
 
         private $pdo;
+
         public function __CONSTRUCT(){
             $this->pdo = Conexion::Conectar();
         }
@@ -12,14 +13,16 @@
 
             try{
                 $stmt = $this->pdo->prepare(
-                    "SELECT * FROM contactos;"
-                );
-                $stmt->execute();
 
+                    "SELECT * FROM contactos
+
+                ;");
+
+                $stmt->execute();
                 return $stmt->fetchAll(PDO::FETCH_OBJ);
+
             }catch(Exception $e){
                 die($e->getMessage());
             }
         }
-
     }

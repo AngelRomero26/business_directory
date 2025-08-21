@@ -1,7 +1,9 @@
+/*  ------ESTILOS DE LA SECCIÓN BUSCADOR------*/
+
 fieldset{
     display: flex;
     justify-content: center;
-    margin: 30px 0 50px 0;
+    margin: 50px 0;
     border: none;
 }
 
@@ -39,6 +41,8 @@ input::placeholder{
     font-size: 10px;
 }
 
+/*  ------ESTILOS DE LA SECCIÓN MOSTRAR TOTAL EMPRESAS------*/
+
 .centro{
     display: flex;
     align-items:center;
@@ -55,10 +59,11 @@ input::placeholder{
     font-weight: 500;
 }
 
+/*  ------ESTILOS DE LA SECCIÓN PRINCIPAL DE LA VISTA PRINCIPAL(INICIO)------*/
+
 .container-card{    
     width: 100vw;
     margin: 15px 0 50px 0;
-    /* overflow: hidden; */
 }
 
 .card{
@@ -69,7 +74,7 @@ input::placeholder{
     box-sizing: border-box;
     max-width: 1200px;
     border-top: red solid 2px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;        /* padding: 40px 0px; */
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .container-img{
@@ -87,20 +92,15 @@ input::placeholder{
 }
 
 #content-card{
-    /* background-color:#0317fc; */
     display: flex;
     width: 100%;
     flex-direction: column;
     padding: 1.2rem;
     padding-top: .5rem;
-    border-radius: 10px;
-    /* box-sizing: border-box; */
-    /* height: 230px; */
-    
+    border-radius: 10px;    
 }
 
 #content-card h2{
-    /* background-color: aqua; */
     font-size: clamp(1.5vw, 3.2vw, 1.5em);
     text-transform: capitalize;
     font-weight: 600;
@@ -117,14 +117,12 @@ input::placeholder{
 #content-card h3, p{
     width: 100%;
     text-align: center;
-    /* color: #dce0e6; */
 }
 
 #content-card p{
     font-size: clamp(.9em, 2.3vw, 25px);
     margin: .2em  30px .2em 10px; 
     letter-spacing: .7px;
-    /* font-weight: bold; */
 }
 
 #content-card .content-p{
@@ -139,9 +137,9 @@ input::placeholder{
     justify-content: center;
     text-align: center;
     height: 36vh;
-    /* height: 58.2vh; */
 }
 
+/*  ------ESTILOS RESPOSIVE DE LA SECCIÓN NO RESULTADOS------*/
 
 @media(min-width:530px){
     .no-resultados{
@@ -149,11 +147,15 @@ input::placeholder{
         align-items: center;
         justify-content: center;
         text-align: center;
-        height: 58.2vh;
     }
 }
 
+/*  ------ESTILOS RESPOSIVE------*/
+
 @media(min-width:700px){
+
+    /*  ------ESTILOS RESPONSIVE DE LA SECCIÓN BUSCADOR------*/
+
     .container-input input{
         padding-left: 20px;
     }
@@ -161,19 +163,20 @@ input::placeholder{
     input::placeholder{
         color:#555;
     }
+
+    /*  ------ESTILOS RESPONSIVE DE LOS LOGOS DE LA SECCIÓN PRINCIPAL------*/
     
     .card{
         display: flex;
         flex-direction: row;
         align-items: center;   
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;        /* padding: 40px 0px; */
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     }
 
     .container-img{
         display: block;
         width: 40%;
         margin: 0 2%;
-        /* height: 90%;  */
     }
 
     .container-img img{
@@ -182,13 +185,12 @@ input::placeholder{
         border-radius: 10px;
         object-fit:contain;
     }
-
-    #content-card{
-    }
-
 }
 
+/*  ------ESTILOS RESPONSIVE DE LA TARJETA DE LA SECCIÓN PRINCIPAL------*/
+
 @media(min-width:880px){
+
     #content-card h3, p{
         display: flex;
         align-items: center;
@@ -206,27 +208,20 @@ input::placeholder{
         font-weight: 100;
         display: flex;
         justify-content: start;
-        /* align-items: start; */
-        /* width: 100%; */
     }
 
     #content-card .content-p{
         display: flex;
         flex-direction: row;
         width: auto;
-        /* justify-content: space-around; */
     }
 
-    .centrado{
+    .espaciado{
         padding: 10px 0;
     }
      
     #content-card .sector{
         display: flex;
-    }
-
-    #content-card .sector h3{
-        
     }
 
     #content-card .socio{
@@ -245,17 +240,11 @@ input::placeholder{
         display: flex;
     } 
 
-    #content-card .telefono h3{
-        
-    }
-
     #content-card .correo{
         display: flex;
-        /* width: 120%; */
     }
 
     #content-card .correo h3{
-        /* display: ; */
         white-space: nowrap;
     }
 
@@ -269,7 +258,6 @@ input::placeholder{
         display: flex;
     }
 
-    
     #content-card .direcciones .box2{
         display: flex;
     }

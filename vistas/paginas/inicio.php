@@ -1,4 +1,4 @@
-<section class="buscador" >
+<section id="buscador">
     <fieldset>
         <div class="container-input">
             <input onkeyup="buscar(this.value);" id="buscar" class="buscadorinpt" type="text" name="buscar" placeholder="Buscar empresa, sector o socio">
@@ -6,7 +6,7 @@
         </div>
     </fieldset> 
 </section>
-<section>
+<section id="totalEmpresas">
     <div class="centro">
         <h4>Total de empresas: <?= $totalEmpresas->Empresas ?></h4>
     </div>
@@ -24,23 +24,21 @@
                         </div>
                         <div id="content-card">
                             <h2> <?=$r->nomEmpresa?> </h2>
-                            <div class="sector centrado">
+                            <div class="sector espaciado">
                                 <h3>SECTOR: </h3>
                                 <p> <?=$r->sector?> </p>
                             </div>
-
                             <div class="content-p">
-                                <div class="socio centrado">
+                                <div class="socio espaciado">
                                     <h3>SOCIO: </h3>
                                     <p> <?=$r->nomSocio?> </p>
                                 </div>
-                                <div class="telefono centrado">
+                                <div class="telefono espaciado">
                                     <h3>TELEFONO: </h3>
                                     <p> <?=$r->numCelular?> </p>
                                 </div>
                             </div>
-
-                            <div class="correo centrado">
+                            <div class="correo espaciado">
                                 <h3>CORREO ELECTRONICO: </h3>
                                 <p> <?=$r->email?></p>
                             </div>

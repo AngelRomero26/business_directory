@@ -1,6 +1,10 @@
+/*  ------IMPORTACIONES DE OTRAS VISTAS------*/
+
+@import "main.css";
 @import "contacto.css";
 @import "sectores.css";
-@import "main.css";
+
+/*  ------ESTILOS GENERALES------*/
 
 *{
     margin: 0;
@@ -8,18 +12,14 @@
     box-sizing: border-box;
 }
 
-html{ scroll-behavior: smooth;}
+html{ scroll-behavior:smooth; }
 
 body{
+    display: flex;
+    flex-direction: column;
     font-family: 'Times New Roman', Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    padding-top: 80px;
-    display: flex;
-    flex-direction: column;
-
-    /* background-color:#f0f0f0; */
-    /* overflow-x: hidden; */
 }
 
 html, body {
@@ -27,23 +27,17 @@ html, body {
     margin: 0;
 }
 
-h1{ font-size: 3em;}
-h2{ font-size: 2em;}
-h3{ font-size: 1.5em;}
-h4{ font-size: 1.5em;}
-h5{ font-size: 1em;}
-p{ font-size: .8em;}
-ul{ list-style: none;}
-a{ text-decoration: none;}
+h1{ font-size: 3em; }
+h2{ font-size: 2em; }
+h3{ font-size: 1.5em; }
+h4{ font-size: 1.5em; }
+h5{ font-size: 1em; }
+p{ font-size: .8em; }
+ul{ list-style: none; }
+a{ text-decoration: none; }
 
-
-header{
-    background-color: #eee;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 2;
-    
+.bi{
+    font-size: 1.3em;
 }
 
 button{
@@ -63,34 +57,33 @@ button:hover{
     background-color: rgba(255, 17, 17, 0.688);
 }
 
-a:hover{
-    color: #2b4c7e;
-    text-decoration: none;
-}
-
 .container-nav{
     max-width: 1200px;
     margin: auto;   
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    
+    padding: 5px 0;
 }
-
 
 .container{
     max-width: 1200px;
     margin: auto;
-    box-sizing: border-box;
-    
+    box-sizing: border-box; 
 }
- 
-header .logo{
-    margin: 0;
+
+/*  ------ESTILOS NAVBAR------*/
+
+header{
+    background-color: #feef;  
+    padding: 20px;  
+}
+
+header nav{
     display: flex;
-    justify-content: center;
-    
-    /* padding: 25px 30px; */
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 10px;
 }
 
 header .container-nav{
@@ -99,33 +92,31 @@ header .container-nav{
     text-align: center;
 }
 
-header nav{
+header .logo{
+    margin: 0;
     display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding-bottom: 20px;
-    
+    justify-content: center; 
 }
+
 header a{
     padding: 8px;
     font-weight: bold;
     color: black;
+    padding-top: 15px;
+}
+
+a:hover{
+    color: #2b4c7e;
+    text-decoration: none;
 }
 
 .logo{
-    /* background-color: #567ebb; */
     max-width:100px;
 }
 
-.logo #logo{
-    /* background-color: aqua; */
-    /* background-size:contain ; */
+.logo #logoP{
     width: 100%;
     height: auto;   
-}
-
-.bi{
-    font-size: 1.3em;
 }
 
 .bi-arrow-left{
@@ -133,55 +124,56 @@ header a{
     font-size: 2em;
 }
 
+/*  ------ESTILOS MAIN------*/
+
 main{
     flex: 1;
 }
 
-/*          footer          */
-.footer {
-  background-color: #222;
-  color: #fff;
-  padding: 20px 10px;
-  text-align: center;
-  margin-top: auto;
+/*  ------ESTILOS FOOTER------*/
+
+.footer{
+    background-color: #222;
+    color: #fff;
+    padding: 45px 10px;
+    text-align: center;
+    margin-top: auto;
 }
 
 .container-footer{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.footer-text {
-  margin-bottom: 10px;
-  font-size: 1rem;
+.footer-text{
+    margin-bottom: 10px;
+    font-size: 1rem;
 }
 
 .social-icons{
-    /* background-color:#fff; */
     width: 100%;
 }
 
-.social-icons a {
-  color: white;
-  margin: 0 10px;
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
-  text-decoration: none;
-  
+.social-icons a{
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+    text-decoration: none;
 }
 
-.social-icons a:hover {
-  color: #567ebb;
+.social-icons a:hover{
+    color: #567ebb;
 }
 
+/*  ------ESTILOS RESPOSIVE DEL NAVBAR------*/
 
 @media(min-width:530px){
     
     header .container-nav{
         flex-direction: row;
         justify-content:space-around;
-        /* padding: 10px 0 ; */
     }
 
     header nav{
@@ -193,8 +185,7 @@ main{
 
     header nav ul{
         display: flex;
-        flex-direction: row;
-        
+        flex-direction: row;  
     }
 
     header nav ul li a{
@@ -206,8 +197,10 @@ main{
         padding-right: 1.5em;
     }
 }
+/*  ------ESTILOS RESPOSIVE DEL FOOTER------*/
 
 @media(min-width:700px){
+    
     .container-footer{
         flex-direction: row;
         justify-content: space-between;
@@ -220,12 +213,3 @@ main{
         margin-bottom: 0;
     }
 }
-
-/* .img-container{
-    height: 100%;
-    width: 28%;
-    
-    background-color: #2b4c7e;
-    border-bottom-left-radius: 10px;
-    border-top-left-radius:10px ;
-} */

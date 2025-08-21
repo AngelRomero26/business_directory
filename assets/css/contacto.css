@@ -1,3 +1,7 @@
+    /*  ------ESTILOS DE LA VISTA CONTACTO------*/
+
+/*  ------ESTILOS GENERALES------*/
+
 .card-container-contacto{
     display: flex;
     justify-content: center;
@@ -14,6 +18,8 @@
     margin: 20px;
 }
 
+/*  ------ESTILOS DE LA IMAGEN------*/
+
 .container-img-contacto{
     display: flex;
     justify-content: center;
@@ -28,20 +34,12 @@
     object-fit:contain;
 }
 
-@media(min-width: 530px){
-    .container-img-contacto{
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        margin: 3% auto;
-    }
-
-    
-}
 .card img{
     width: 100%;
     height: auto;
 }
+
+/*  ------ESTILOS DE LA INFORMACION------*/
 
 .card-content-contacto{
     padding: 16px;
@@ -67,4 +65,15 @@
     margin-bottom: 8px;
     text-align: center;
     padding: 0 5px;
+}
+
+/*  ------ESTILOS RESPONSIVE DE LA IMAGEN------*/
+
+@media(min-width: 530px){
+    .container-img-contacto{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 4% auto;
+    }
 }

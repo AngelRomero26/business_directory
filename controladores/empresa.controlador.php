@@ -1,5 +1,4 @@
 <?php
-
     require_once "modelos/empresa.modelo.php";
 
     class EmpresaControlador{
@@ -10,21 +9,22 @@
         }
 
         public function Inicio(){
+
             $buscar = trim($_GET['buscar'] ?? '');
 
-            
             if($buscar ===''){
                 
                 $empresas = $this->ctrMostrarEmpresas();
                 $totalEmpresas = $this->ctrMostrarTotal();
             }else{
+
                 $empresas = $this->ctrBuscador($buscar);
                 $totalEmpresas = (object)['Empresas' => $busqueda($numero)];
-
             }
-            require_once "vistas/paginas/encabezado.php";
+
+            require_once "vistas/paginas/modulos/encabezado.php";
             require_once "vistas/paginas/inicio.php";
-            require_once "vistas/paginas/pie.php";
+            require_once "vistas/paginas/modulos/pie.php";
         }
 
         public function ctrMostrarTotal(){
@@ -32,13 +32,7 @@
         }
 
         public function ctrMostrarEmpresas(){
-            //comente esta funcion porque la estoy pasando en la funcion del modelo buscar y se repite
             return $this->modelo->mdlMostrarEmpresas();
-        }
-
-        public function ctrMostrarEmpresasSinNulos(){
-
-            return $this->modelo->mdlMostrarEmpresasSinNulos();
         }
 
         public function ctrBuscador($buscar = ''){
@@ -52,33 +46,14 @@
 
                 'empresas' => $empresas,
                 'numero' => $numero
-
             ]);
-            
         }
 
-          public function ctrMostrarEmpresasSinLogo(){
+        public function ctrMostrarEmpresasSinNulos(){
+            return $this->modelo->mdlMostrarEmpresasSinNulos();
+        }
 
+        public function ctrMostrarEmpresasSinLogo(){
             return $this->modelo->mdlMostrarEmpresasSinLogo();
         }
-        
-
-         // static public function ctrMostrarBd(){
-
-        //     $bd = "canacintra";
-
-        //     $respuesta = Modelo::mdlMostrarBd($bd);
-
-        //     return $respuesta;
-        // }
-
-        // static public function ctrMostrarEmpresas(){
-
-        //     $tabla1 = "socios";
-        //     $tabla2 = "empresas";
-
-        //     $respuesta = Modelo::mdlMostrarEmpresas($tabla1, $tabla2);
-        //     return $respuesta;
-        // }
-
     }
